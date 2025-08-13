@@ -16,5 +16,12 @@ namespace SalesWebMvc.Services
         {
             return _context.Seller.ToList(); // Returns a list of all sellers from the database
         }
+
+        public void Insert(Seller obj)
+        {
+            obj.Department = _context.Department.First();
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }
