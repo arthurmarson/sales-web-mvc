@@ -66,8 +66,8 @@ namespace SalesWebMvc.Controllers
         {
             try
             {
-            await _sellerService.RemoveAsync(id);
-            return RedirectToAction(nameof(Index)); // Redirect to the Index action after deletion
+                await _sellerService.RemoveAsync(id);
+                return RedirectToAction(nameof(Index)); // Redirect to the Index action after deletion
             }
             catch (IntegrityException e)
             {
